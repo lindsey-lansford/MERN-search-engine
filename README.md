@@ -51,4 +51,4 @@ Please reach out with any questions you may have about this application.
 
 ## Heroku Deployed Link
 
-[Click here to view my deployed application](https://vast-inlet-96086.herokuapp.com/)
+[Click here to view my deployed application]()
