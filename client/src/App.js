@@ -1,18 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SearchBooks from './pages/SearchBooks';
-import SavedBooks from './pages/SavedBooks';
-import Navbar from './components/Navbar';
-
-//add 
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
-import {setContext} from '@apollo/client/link/context';
+import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import SearchBooks from './pages/SearchBooks';
+import SavedBooks from './pages/SavedBooks';
+import Navbar from './components/Navbar';
+
+
+// Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -42,7 +43,8 @@ function App() {
       <Router>
       <>
         <Navbar />
-        <Routes>
+          <Routes>
+            <>
           <Route 
             path='/' 
             element={<SearchBooks />} 
@@ -54,7 +56,8 @@ function App() {
           <Route 
             path='*'
             element={<h1 className='display-2'>Wrong page!</h1>}
-          />
+              />
+              </>
         </Routes>
       </>
       </Router>
